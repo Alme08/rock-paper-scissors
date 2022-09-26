@@ -1,7 +1,7 @@
 let getComputerChoice = () =>{ // computer choice: returns a random number between 0 and 2
     return Math.floor(Math.random()*3)
 }
-let getPlayerChoice = () =>{ // answer the user choice
+/* let getPlayerChoice = () =>{ // answer the user choice
     let choice = prompt('Rock, paper or scissors... one, two, three!');
     if ((choice.trim()).toLowerCase() == 'rock') {
         return 0;
@@ -12,7 +12,7 @@ let getPlayerChoice = () =>{ // answer the user choice
     }else{
         return
     }
-}
+} */
 
 // rock wins scissors, paper wins rock, scissors wins paper
 // rock = 0, paper = 1, scissors = 2
@@ -34,7 +34,7 @@ const playRound = (a, b) =>{ // a round of the game
     
 }
 
-const game = () =>{ //the function game, better of five
+/* const game = () =>{ //the function game, better of five
     let computerScore = 0;
     let userScore = 0;
 
@@ -51,6 +51,6 @@ const game = () =>{ //the function game, better of five
     }
 
     return (userScore > computerScore) ? 'You win the game!' : (computerScore > userScore) ? 'The computer wins the game...' : 'It\'s a tie! nobody wins!';   
-}
+} */
 
-console.log(game());
+//console.log(game());
