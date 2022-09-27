@@ -1,3 +1,26 @@
+const startGame = document.querySelector('.start-game')
+const gameUi = document.querySelector('.game-ui')
+const enterAudio = new Audio('audios/enter.wav')
+
+const removeStartScreen = (e) =>{
+    if (e.key === 'Enter') {
+        document.removeEventListener('keydown', removeStartScreen);
+        enterAudio.currentTime = 0;
+        enterAudio.play()
+        
+        startGame.classList.add('hide')
+        setTimeout(() => {
+            startGame.classList.add('display-none')
+            gameUi.classList.remove('display-none')
+        }, 500);
+        setTimeout(() => {
+            gameUi.classList.remove('hide')
+        }, 600);
+    }
+}
+document.addEventListener('keydown', removeStartScreen)
+
+
 let getComputerChoice = () =>{ // computer choice: returns a random number between 0 and 2
     return Math.floor(Math.random()*3)
 }
