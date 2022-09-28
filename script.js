@@ -21,40 +21,64 @@ const removeStartScreen = (e) =>{
 document.addEventListener('keydown', removeStartScreen)
 
 
-let getComputerChoice = () =>{ // computer choice: returns a random number between 0 and 2
-    return Math.floor(Math.random()*3)
-}
-/* let getPlayerChoice = () =>{ // answer the user choice
-    let choice = prompt('Rock, paper or scissors... one, two, three!');
-    if ((choice.trim()).toLowerCase() == 'rock') {
-        return 0;
-    }else if((choice.trim()).toLowerCase() == 'paper'){
-        return 1;
-    }else if((choice.trim()).toLowerCase() == 'scissors'){
-        return 2;
-    }else{
-        return
-    }
-} */
+let getComputerChoice = () => Math.floor(Math.random()*3) // computer choice: returns a random number between 0 and 2
 
+let buttons = document.querySelectorAll('button');
+let pUserScore = document.querySelector('.user .score')
+let pPcScore = document.querySelector('.pc .score')
+let userBoard = document.querySelector('.user .board')
+let pcBoard = document.querySelector('.pc .board')
+let pVs = document.querySelector('.vs')
+let options = document.querySelector('.options')
+let divResult = document.querySelector('.div-result')
+let pResult = document.querySelector('.game-result')
+
+let computerScore = 0;
+let userScore = 0;
+
+
+
+buttons.forEach(button => button.addEventListener('click', e=>{
+    let choice = button.dataset.choice;
+
+    result = playRound(getComputerChoice(), choice);
+    console.log(result);
+    if (result == 'Win') {
+        userScore++
+    }else if(result == 'Lose'){
+        computerScore++
+    }
+    pVs.textContent = result
+    pUserScore.textContent = userScore
+    pPcScore.textContent = computerScore
+
+    if(userScore == 5){
+        options.classList.add('display-none')
+        divResult.classList.remove('display-none')
+        pResult.textContent = 'You win the game'
+    }
+}));
+
+
+ 
 // rock wins scissors, paper wins rock, scissors wins paper
 // rock = 0, paper = 1, scissors = 2
 
-const playRound = (a, b) =>{ // a round of the game
-    console.log(a, b);
-    if (b == 0) {
-        return (a == 1) ? 'You Lose! Paper beats rock' : 
-               (a == 2) ? 'You Win! Rock beats scissors' : 'It\'s a tie!';
-    }else if (b == 1) {
-        return (a == 0) ? 'You Win! Paper beats rock' : 
-               (a == 2) ? 'You Lose! Scissors beats paper' : 'It\'s a tie!';
-    }else if (b == 2) {
-        return (a == 0) ? 'You Lose! Rock beats scissors' : 
-               (a == 1) ? 'You Win! Scissors beats paper' : 'It\'s a tie!';
-    }else{
-        return 'please select a valid option'
+ const playRound = (pc, player) =>{ // a round of the game
+    console.log(pc, player);
+    userBoard.innerHTML = `<img src="images/user_${player}.png">`;
+    pcBoard.innerHTML = `<img src="images/pc_${pc}.png">`;
+
+    if (player == 0) {
+        return (pc == 1) ? 'Lose' : 
+               (pc == 2) ? 'Win' : 'Tie';
+    }else if (player == 1) {
+        return (pc == 0) ? 'Win' : 
+               (pc == 2) ? 'Lose' : 'Tie';
+    }else if (player == 2) {
+        return (pc == 0) ? 'Lose' : 
+               (pc == 1) ? 'Win' : 'Tie';
     }
-    
 }
 
 /* const game = () =>{ //the function game, better of five

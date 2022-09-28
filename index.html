@@ -20,9 +20,9 @@
         <div class="players">
             <div class="user">
                 <div class="score-board">
-                    <img src="images/user.png" alt="">
                     <p> You: </p>
                     <p class="score">0</p>
+                    <img src="images/user.png">
                 </div>
                 <div class="board">
                     
@@ -31,8 +31,8 @@
             <p class="vs">VS</p>
             <div class="pc">
                 <div class="score-board">
-                    <img src="images/user.png" alt="">
-                    <p> Computer: </p>
+                    <img src="images/pc.png">
+                    <p>PC: </p>
                     <p class="score">0</p>
                 </div>
                 <div class="board">
@@ -42,11 +42,15 @@
         </div>
         <div class="options">
             <p>Choose!</p>
-            <div>
-                <button>Rock</button>
-                <button>Paper</button>
-                <button>Scissors</button>
+            <div class="buttons">
+                <button data-choice="0"><img src="images/user_0.png"></button>
+                <button data-choice="1"><img src="images/user_1.png"></button>
+                <button data-choice="2"><img src="images/user_2.png"></button>
             </div>
+        </div>
+        <div class="div-result display-none">
+            <p class="game-result"></p>
+            <button>Retry</button>
         </div>
     </div>
 

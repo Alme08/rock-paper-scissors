@@ -69,7 +69,7 @@ h1{
     height: auto;
 }
 .user{
-    color: #31E1F7;
+    color: #3f48cc;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -81,11 +81,17 @@ h1{
     align-items: center;
     font-size: 2rem;
 }
+.score-board p{
+    padding: 0.8rem;
+}
 .board{
     height: 400px;
     width: 400px;
     border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .vs{
     align-self: center;
@@ -94,7 +100,7 @@ h1{
     text-shadow: 0px 10px 0px #f04662;
 }
 .pc{
-    color: #003bfd;
+    color: #c40424;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -107,13 +113,31 @@ h1{
     font-size: 2rem;
     margin-bottom: 20px;
 }
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
 .options button{
     width: 150px;
     height: 150px;
-    color: #31E1F7;
     background: none;
-    border: 2px solid #f04662;
+    border: 5px solid rgba(255, 255, 255, 0.3);
     border-radius: 100%;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.options button:hover{
+    border: 5px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 0px 20px 0px rgba(255,248,248,0.73);
+}
+.options button img{
+    width: 100%;
+    height: auto;
 }
 
 /* FOOTER */
