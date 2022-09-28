@@ -19,7 +19,11 @@ h1{
     text-shadow: 0px 7px 0px #003bfd;
     margin: 2rem 0 5rem;
 }
-
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+/* PRESS START SCREEN */
 .start-game{
     position: relative;
     font-size: 8rem;
@@ -39,11 +43,12 @@ h1{
         transform: translateY(0);
     }
 }
+/* GAME SCREEN */
 .game-ui{
-    gap: 20px;
-    display: flex;
+    flex: 1;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     transition: all 2s ease-in-out;
 }
 .hide{
@@ -53,6 +58,65 @@ h1{
     display: none;
 }
 
+.players{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.players img{
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+}
+.user{
+    color: #31E1F7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.score-board{
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+}
+.board{
+    height: 400px;
+    width: 400px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.vs{
+    align-self: center;
+    font-size: 5rem;
+    color: #FFC23C;
+    text-shadow: 0px 10px 0px #f04662;
+}
+.pc{
+    color: #003bfd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+/* BUTTONS */
+.options p{
+    color: #FFC23C;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.options button{
+    width: 150px;
+    height: 150px;
+    color: #31E1F7;
+    background: none;
+    border: 2px solid #f04662;
+    border-radius: 100%;
+}
+
+/* FOOTER */
 footer{
     font-size: 1.5rem;
     margin: 2rem;
