@@ -22,16 +22,17 @@
                 <div class="score-board">
                     <p> You: </p>
                     <p class="score">0</p>
-                    <img src="images/user.png">
+                    <img class="userImg" src="images/user.png">
                 </div>
                 <div class="board">
                     
                 </div>
             </div>
             <p class="vs">VS</p>
+            <button class="retry display-none">Retry?</button>
             <div class="pc">
                 <div class="score-board">
-                    <img src="images/pc.png">
+                    <img class="pcImg" src="images/pc.png">
                     <p>PC: </p>
                     <p class="score">0</p>
                 </div>
@@ -43,14 +44,13 @@
         <div class="options">
             <p>Choose!</p>
             <div class="buttons">
-                <button data-choice="0"><img src="images/user_0.png"></button>
-                <button data-choice="1"><img src="images/user_1.png"></button>
-                <button data-choice="2"><img src="images/user_2.png"></button>
+                <button class="choice" data-choice="0"><img src="images/user_0.png"></button>
+                <button class="choice" data-choice="1"><img src="images/user_1.png"></button>
+                <button class="choice" data-choice="2"><img src="images/user_2.png"></button>
             </div>
         </div>
         <div class="div-result display-none">
             <p class="game-result"></p>
-            <button>Retry</button>
         </div>
     </div>
 
